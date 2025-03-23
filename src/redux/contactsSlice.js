@@ -12,7 +12,10 @@ filters: {
 const contactsSlice = createSlice({
 name: "phonebook",
 initialState: INITIAL_STATE,
-reducers: {
+    reducers: {
+    setInitialContacts(state, action) {
+        state.contacts.items = action.payload;
+    },
     addContact(state, action) {
     state.contacts.items.push(action.payload);
     },
@@ -24,6 +27,7 @@ reducers: {
 },
 });
 
-export const { addContact, deleteContact, setFilter } = contactsSlice.actions;
+export const { setInitialContacts, addContact, deleteContact } =
+    contactsSlice.actions;
 
 export const phoneBookReducer = contactsSlice.reducer;

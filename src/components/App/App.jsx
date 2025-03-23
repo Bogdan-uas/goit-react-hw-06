@@ -36,10 +36,6 @@ function App() {
     }
   }, [dispatch]);
 
-  useEffect(() => {
-    localStorage.setItem("users", JSON.stringify(contacts));
-  }, [contacts]);
-
   const addInfo = (newInfo) => {
     const finalUser = {
       ...newInfo,
